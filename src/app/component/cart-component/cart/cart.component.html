@@ -1,0 +1,32 @@
+<div class="cart">
+  <p>SHOPPING CART</p>
+  <div id="cart_div">
+    <div id="cart_clear">
+      <a>You have {{shoppingCart.length}} item in your cart..</a>
+      <button style="margin: 10px" class="btn btn-danger" (click)="cartCLear()">Clear</button>
+    </div>
+    <div id="cart_header">
+      <h2></h2>
+      <h2>Product</h2>
+      <h2>Quantity</h2>
+      <h2>Price</h2>
+    </div>
+
+    <div *ngFor="let item of shoppingCart" id="table_div">
+      <img class="divELE" [src]="item.path" />
+      <div class="divELE">{{ item.name }}</div>
+      <div id="btnmain" class="divELE">
+        <button type="button" class="btnc">+</button>
+        <div id="blank">{{ item.qty }}</div>
+        <button type="button" class="btnc">-</button>
+      </div>
+      <div class="divELE"><span>$</span>{{ item.price }}</div>
+    </div>
+    <div id="total_div">
+      <button class="btn" style="background-color: teal" (click)="navigate()">
+        Check Out
+      </button>
+      <div><span>$</span>{{ total }}</div>
+    </div>
+  </div>
+</div>
